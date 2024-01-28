@@ -15,9 +15,9 @@ function getFeedHtml() {
     .map((item) => {
       return `
         <div class="shoppinglist">
-          <div>
-            <h3 class="emoji">${item.emoji}</h3>
-          </div>
+        <div>
+        <img class="imageurl" src="${item.imageurl}" alt="${item.name} Image"/>
+      </div>
           <div class="iteminfo">
             <h3 data-itemname="${item.name}">${item.name}</h3>
             <p data-ingredients="${item.ingredients}">${item.ingredients.join(
@@ -28,13 +28,10 @@ function getFeedHtml() {
           
           <div id="cartbutton">
           <div>
-          <i class="fa-regular fa-square-plus addbutton" data-add="${
+          <i class="fa-solid fa-circle-plus addbutton" data-add="${
             item.uuid
           }"></i>   </div>
-        <div><h4 id="quantity_${item.uuid}"> ${item.quantity}</h4></div>
-        <div> <i class="fa-regular fa-square-minus removebutton" data-remove="${
-          item.uuid
-        }"></i>     </div>
+        
           </div>
           
           </div>
@@ -70,9 +67,35 @@ function updateOrderList() {
   if (orderedItems.length > 0) {
     const orderListHtml = orderedItems
       .map((item) => {
-        return `<div id="orderlist"><p>${item.quantity} x ${item.name} 
-        
-        </br>$${item.price * item.quantity}</p></div>`;
+        return `
+        <div>
+          <div class="orderlist-info">
+            
+            <div class="iteminfo">
+              <h4 data-itemname="${item.name}" id="itemnamebasket">${
+          item.name
+        }</h4>
+           
+        <div id="orderquantity">
+        <h4 id="quantity_${item.uuid}">${item.quantity}</h4>     
+        <i class="fa-regular fa-square-minus removebutton" data-remove="${
+          item.uuid
+        }"></i>
+      </div>
+
+              <h3 id="itempricebasket" data-price="${item.price}">$${
+          item.price * item.quantity
+        }</h3>
+</div>
+      
+        <div id="orderingredients" >
+      <small data-ingredients="${item.ingredients}">${item.ingredients.join(
+          ", "
+        )}</small>
+      </div>
+            
+          
+          </div>`;
       })
       .join("");
 
@@ -83,9 +106,7 @@ function updateOrderList() {
 
     orderList.innerHTML = `<h2><strong>Order List:</strong></h2>${orderListHtml}
     <div id="totalprice"><h3><strong>Total: $${totalPrice}</strong></h3></div>
-    <div><button id="checkout">Check Out</button></div>
-    
-    `;
+    <div><button id="checkout">Check Out</button></div>`;
 
     checkOut();
     finalizeOrder();
@@ -94,12 +115,19 @@ function updateOrderList() {
 
 const mainElement = document.querySelector("main");
 function checkOut() {
-  const checkOut = document.getElementById("checkout");
-  checkOut.addEventListener("click", function () {
+  const checkOutButton = document.getElementById("checkout");
+  checkOutButton.addEventListener("click", function () {
     console.log("clicked");
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+
     document.getElementById("creditCardForm").style.display = "block";
     mainElement.classList.add("checkout-bg");
   });
+
   closePayment();
 }
 
