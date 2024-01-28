@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Order App</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Welcome to Quik</title>
+    <link rel="stylesheet" href="welcome-styles.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -13,78 +13,60 @@
       referrerpolicy="no-referrer"
     />
   </head>
+
   <body>
-    <main>
-      <div class="heading">
-        <div class="title">
-          <h1>Quik.</h1>
-          <h2>Quick, Easy, <span>Quik.</span></h2>
-        </div>
-        <div id="slogan">
-          <h3>Instant Delivery App</h3>
+    <main class="grid-container">
+      <div class="welcome">
+        <h1>Quik<span id="dot">.</span></h1>
+        <div class="explanation">
+          <small>Your Instant Delivery App.</small>
+          <p>Quick, Easy, <span>Quik.</span></p>
         </div>
       </div>
 
-      <div class="feed" id="feed">
-        <div id="menuHTML">
-          <!-- MENU WILL BE RENDERED HERE -->
+      <div id="registrationForm">
+        <div>
+          <h2>Ready to place your first order?</h2>
+        </div>
+        <div>
+          <h3><i class="fa-solid fa-door-open"></i> Sign up now!</h3>
         </div>
 
+        <form id="signupForm" class="form-grid">
+          <div class="form-group">
+            <label for="fullName"></label>
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              placeholder="Enter your full name"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="email"></label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email address"
+              required
+            />
+          </div>
+
+          <button type="submit">Sign Up</button>
+        </form>
         <div>
-          <div id="orderlist"></div>
+          <p>
+            Continue without membership?
+            <br />
+            <a href="./app.html" id="continueWithoutMembership"
+              >Continue as a <span>guest.</span></a
+            >
+          </p>
         </div>
       </div>
     </main>
-    <aside>
-      <form id="creditCardForm">
-        <div id="closebtn"><i class="fa-solid fa-xmark"></i></div>
-        <h2><strong>Enter card details</strong></h2>
-        <small
-          >Use placeholder data for testing, e.g., credit card "4242 4242 4242
-          4242" and any 3-digit CVV. Note: Fictitious values for testing
-          only.</small
-        >
-
-        <label for="cardHolder"></label>
-        <input
-          type="text"
-          id="cardHolder"
-          name="cardHolder"
-          placeholder="Enter your name"
-          required
-        />
-
-        <label for="email"></label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="Enter your e-mail"
-          required
-        />
-
-        <label for="cardNumber"></label>
-        <input
-          type="text"
-          id="cardNumber"
-          name="cardNumber"
-          placeholder="Enter your card number"
-          required
-        />
-
-        <label for="cvv"></label>
-        <input
-          type="text"
-          id="cvv"
-          name="cvv"
-          placeholder="Enter the CVV"
-          pattern="^\d{3,4}$"
-          required
-        />
-
-        <input type="submit" value="Submit" id="submit" />
-      </form>
-    </aside>
 
     <script src="script.js" type="module"></script>
     <script

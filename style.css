@@ -9,6 +9,19 @@ html {
   font-size: 16px;
 }
 
+nav {
+  width: 100%;
+  display: inline;
+  top: 0;
+  right: 0;
+  left: 0;
+  position: fixed;
+  background-color: #333;
+  color: #f8f8f8;
+  padding: 1rem 1rem;
+  z-index: 9;
+}
+
 body {
   margin-top: 3rem;
   font-family: "Inter", sans-serif;
