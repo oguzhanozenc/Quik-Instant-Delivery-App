@@ -60,11 +60,13 @@ Users can proceed to checkout, triggering the display of a payment form. The pay
 
 Upon successful payment submission, users receive a thank-you message. The message includes the user's name provided during registration.
 
+
 ## Installation and Local Setup
 
 Clone the repository:
 
 ```bash
 git clone https://github.com/your-username/quik-app.git
+
 
 Feel free to explore the code, suggest improvements, and contribute to making Quik even better! 🛠️🚀
