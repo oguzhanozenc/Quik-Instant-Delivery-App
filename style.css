@@ -1,6 +1,6 @@
 * {
   margin: 0 auto;
-  width: 90%;
+  width: 92%;
   box-sizing: border-box;
   text-decoration: none;
   outline: none;
@@ -164,6 +164,7 @@ h3 {
   position: relative;
   height: 100%;
   padding: 1rem 1rem;
+  user-select: none;
 }
 
 .shoppinglist img {
@@ -181,7 +182,6 @@ h3 {
   opacity: 1;
   mask-image: linear-gradient(to top, rgba(0, 0, 0, 0) 1%, black 40%);
   transition: opacity 0.3s ease;
-  user-select: none;
 }
 
 .shoppinglist:hover img {
@@ -365,6 +365,7 @@ aside h2 {
     margin: 0 auto;
     width: 90%;
     box-sizing: border-box;
+    overflow: visible;
   }
   #menuHTML {
     grid-template-columns: repeat(2, 1fr);
@@ -376,6 +377,23 @@ aside h2 {
 }
 
 @media only screen and (max-width: 600px) {
+  * {
+    margin: 0 auto;
+    width: 90%;
+    box-sizing: border-box;
+    overflow: visible;
+  }
+  .heading {
+    display: flex;
+  }
+  .heading h1 {
+    font-size: 2rem;
+  }
+
+  .heading p {
+    font-size: 0.3rem;
+  }
+
   #menuHTML {
     grid-template-columns: repeat(1, 1fr);
   }

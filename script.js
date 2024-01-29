@@ -19,12 +19,18 @@ document.addEventListener("click", function (e) {
     handleContinueAsGuestClick(e);
   }
 });
-
 function handleSignUpButtonClick(e) {
   e.preventDefault();
 
-  const fullName = document.getElementById("fullName").value;
-  const email = document.getElementById("email-signup").value;
+  const fullNameInput = document.getElementById("fullName");
+  const emailInput = document.getElementById("email-signup");
+
+  if (!fullNameInput.reportValidity() || !emailInput.reportValidity()) {
+    return;
+  }
+
+  const fullName = fullNameInput.value;
+  const email = emailInput.value;
 
   userInfo = {
     fullName,
@@ -46,6 +52,7 @@ function handleSignUpButtonClick(e) {
   getFeedHtml();
   render();
 }
+
 function handleContinueAsGuestClick(e) {
   e.preventDefault();
   welcomePage.classList.add("hidden");
@@ -191,9 +198,8 @@ function finalizeOrder() {
 
     creditCardForm.innerHTML = `
       <div id="closebtn"><i class="fa-solid fa-xmark"></i></div>
-      <h2>Thanks for your order, ${fullName}!</h2>
-      <p>Email: ${email}</p>
-      <p>We will get in touch with you soon!</p>
+      <h2>Thanks for your order, ${fullName}!</h2>   
+      <p>We will get in touch with you soon from the e-mail you previously shared.<small>(${email})</small></p>
     `;
 
     closePayment();
