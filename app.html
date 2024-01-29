@@ -14,8 +14,9 @@
     />
   </head>
   <body>
-    <nav><div id="user-info"></div></nav>
-    <main>
+    <nav id="user-info" class="hidden"></nav>
+
+    <main class="hidden">
       <div class="heading">
         <div class="title">
           <h1>Quik.</h1>
@@ -37,7 +38,7 @@
       </div>
     </main>
     <aside>
-      <form id="creditCardForm">
+      <form id="creditCardForm" autocomplete="off" class="hidden">
         <div id="closebtn"><i class="fa-solid fa-xmark"></i></div>
         <h2><strong>Enter card details</strong></h2>
         <small
@@ -86,6 +87,59 @@
         <input type="submit" value="Submit" id="submit" />
       </form>
     </aside>
+
+    <section id="welcomepage" class="visible">
+      <div class="grid-container" id="grid-container">
+        <div class="welcome" id="welcome">
+          <div id="quik">
+            <h1>Quik.</h1>
+          </div>
+          <div class="explanation">
+            <p>Quick, Easy, <span>Quik.</span></p>
+            <small>Your Instant Delivery App.</small>
+          </div>
+        </div>
+
+        <div id="registrationForm">
+          <div>
+            <h2><strong>Ready to place your first order?</strong></h2>
+          </div>
+          <form id="signupForm" class="form-grid">
+            <div class="form-group">
+              <label for="fullName"></label>
+              <input
+                type="text"
+                id="fullName"
+                name="fullName"
+                placeholder="Enter your full name"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="email"></label>
+              <input
+                type="email"
+                id="email-signup"
+                name="email"
+                placeholder="Enter your email address"
+                required
+              />
+            </div>
+
+            <button type="submit" id="signupbtn">Sign Up!</button>
+          </form>
+          <div id="continuebtn">
+            <p id="continueWithoutMembership">
+              Continue without membership?
+              <span id="continueGuestLink"
+                >Continue as a
+                <button type="button" id="guesttext">guest.</button></span
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <script src="script.js" type="module"></script>
     <script
