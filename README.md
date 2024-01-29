@@ -68,5 +68,3 @@ Clone the repository:
 
 ```bash
 git clone https://github.com/your-username/quik-app.git
-
-
