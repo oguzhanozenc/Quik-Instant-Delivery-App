@@ -1,4 +1,5 @@
 # Quik - Instant Delivery App
+![About quik](quik.gif)
 
 Quik is a web application designed to provide users with a quick and personalized instant delivery experience. The project is developed using HTML, CSS, and JavaScript, with a modular code organization for maintainability. The application features a responsive design to ensure an optimal user experience across various devices.
 
