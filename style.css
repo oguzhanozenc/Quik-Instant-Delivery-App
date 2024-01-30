@@ -372,7 +372,7 @@ aside h2 {
   }
 
   #creditCardForm {
-    width: 100%;
+    width: 90%;
   }
 
   .feed {
@@ -650,6 +650,7 @@ aside h2 {
     margin: 0 auto;
     padding: 0;
     overflow: visible;
+    overflow: scroll;
   }
 
   #welcomepage {
