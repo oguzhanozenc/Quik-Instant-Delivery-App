@@ -43,7 +43,7 @@ function handleSignUpButtonClick(e) {
 
   document.querySelector("#user-info").innerHTML = `
     <p>Welcome, ${userInfo.fullName}!</p>
-    <p>Email: ${userInfo.email}</p>
+    <p id="useremail">${userInfo.email}</p>
   `;
 
   document.getElementById("cardHolder").value = userInfo.fullName;

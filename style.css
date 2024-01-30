@@ -734,10 +734,20 @@ aside h2 {
   #welcomepage h3 {
     font-size: 0.9rem;
   }
+  nav {
+    display: flex;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #useremail {
+    display: none;
+  }
 
   .welcome p,
-  .welcome small,
-  nav {
+  .welcome small {
     display: none;
   }
 }
