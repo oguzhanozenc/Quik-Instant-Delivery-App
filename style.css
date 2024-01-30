@@ -371,6 +371,10 @@ aside h2 {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  #creditCardForm {
+    width: 100%;
+  }
+
   .feed {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -645,7 +649,7 @@ aside h2 {
   * {
     margin: 0 auto;
     padding: 0;
-    overflow: hidden;
+    overflow: visible;
   }
 
   #welcomepage {
